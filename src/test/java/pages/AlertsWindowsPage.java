@@ -25,6 +25,8 @@ public class AlertsWindowsPage {
     public WebElement browserWindows;
     @FindBy(xpath = "//span[text()='Frames']")
     public WebElement frameButton;
+    @FindBy(xpath = "//span[text()='Alerts']")
+    public WebElement alertsForm;
 
     public void navigateToWindowPage(){
         pageMethods.scrollPage(0,350);
@@ -34,5 +36,8 @@ public class AlertsWindowsPage {
     public void navigateToFramePage(){
         pageMethods.scrollPage(0,350);
         elementMethods.clickElement(frameButton);
+    }
+    public void navigateToAlertsForm(){
+        elementMethods.clickElement(alertsForm);
     }
 }

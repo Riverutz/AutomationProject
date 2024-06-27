@@ -27,9 +27,7 @@ public class WebTableTest {
         ElementMethods elementMethods = new ElementMethods(driver);
         PageMethods pageMethods = new PageMethods(driver);
 
-        //facem un scroll la pagina pentru vizibilitate
-        //JavascriptExecutor js = (JavascriptExecutor) driver;
-        //js.executeScript("window.scrollBy(0,350)", "");
+
         pageMethods.scrollPage(0,350);
 
         //interactionam cu meniul/submeniul de pe site
