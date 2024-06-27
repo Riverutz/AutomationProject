@@ -9,6 +9,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import pages.AlertsWindowsPage;
+import pages.FramePage;
+import pages.HomePage;
+import pages.NestedFramePage;
 
 import java.time.Duration;
 
@@ -26,52 +30,20 @@ public class FrameTest {
         ElementMethods elementMethods = new ElementMethods(driver);
         PageMethods pageMethods = new PageMethods(driver);
         FrameMethods frameMethods = new FrameMethods(driver);
+        HomePage homePage = new HomePage(driver);
+        homePage.navigateToAlertsMenu();
 
-        pageMethods.scrollPage(0, 350);
+        AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(driver);
+        alertsWindowsPage.navigateToFramePage();
 
-        WebElement alertsMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
-        elementMethods.clickElement(alertsMenu);
+        FramePage framePage = new FramePage(driver);
+        framePage.interactWithBigIframe();
+        framePage.interactWithSmallIframe();
+        framePage.navigateToNestedFrames();
 
-        WebElement frameForm = driver.findElement(By.xpath("//span[text()='Frames']"));
-        elementMethods.clickElement(frameForm);
+        NestedFramePage nestedFramePage = new NestedFramePage(driver);
+        nestedFramePage.interactWithNestedFrame();
 
-        //NE MUTAM CU FOCUSUL PE UN iFRAME
-
-        //driver.switchTo().frame("frame1");
-        frameMethods.switchToiFrame("frame1");
-
-        WebElement iframeTest = driver.findElement(By.id("sampleHeading"));
-        System.out.println(iframeTest.getText());
-
-        //NE INTOARCEM CU FOCUSUL LA FRAME-UL DEFAULT
-
-        //driver.switchTo().defaultContent();
-        frameMethods.defaultContent();
-
-        //driver.switchTo().frame("frame2");
-        frameMethods.switchToiFrame("frame2");
-
-        WebElement iframeTestTwo = driver.findElement(By.id("sampleHeading"));
-        System.out.println(iframeTestTwo.getText());
-
-        //driver.switchTo().defaultContent();
-        frameMethods.defaultContent();
-
-        WebElement nestedFrames = driver.findElement(By.xpath("//span[text()='Nested Frames']"));
-        elementMethods.clickJSElement(nestedFrames);
-
-        //INTERACTIONAM CU iFRAME in iFRAME
-
-        //driver.switchTo().frame("frame1");
-        frameMethods.switchToiFrame("frame1");
-
-
-        WebElement childIFrame = driver.findElement(By.xpath("//iframe[@srcdoc='<p>Child Iframe</p>']"));
-        //driver.switchTo().frame(childIFrame);
-        frameMethods.switchToFrame(childIFrame);
-
-        WebElement text = driver.findElement(By.xpath("//p"));
-        System.out.println(text.getText());
     }
 }
 
