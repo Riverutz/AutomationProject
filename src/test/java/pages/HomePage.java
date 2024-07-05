@@ -21,13 +21,15 @@ public class HomePage {
         pageMethods = new PageMethods(driver);
         PageFactory.initElements(driver, this);
     }
-    //WebElement subMenu = driver.findElement(By.xpath("//span[text()='Browser Windows']"));
 
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
     public WebElement alertMenu;
 
     @FindBy(xpath = "//h5[text()='Forms']")
     public WebElement formsMenu;
+
+    @FindBy(xpath = "//h5[text()='Elements']")
+    public WebElement elementsMenu;
 
     public void navigateToAlertsMenu(){
         pageMethods.scrollPage(0,350);
@@ -37,5 +39,9 @@ public class HomePage {
     public void navigateToFormsMenu(){
         pageMethods.scrollPage(0,350);
         elementMethods.clickElement(formsMenu);
+    }
+    public void navigateToElementsMenu(){
+        pageMethods.scrollPage(0,350);
+        elementMethods.clickElement(elementsMenu);
     }
 }

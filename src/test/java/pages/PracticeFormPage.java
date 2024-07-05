@@ -28,7 +28,6 @@ public class PracticeFormPage {
         elementMethods = new ElementMethods(driver);
         alertMethods = new AlertMethods(driver);
         pageMethods = new PageMethods(driver);
-
         PageFactory.initElements(driver, this);
     }
 
@@ -89,7 +88,6 @@ public class PracticeFormPage {
     @FindBy(xpath = "//table[@class='table table-dark table-striped table-bordered table-hover']/tbody/tr")
     public List<WebElement> tableValues;
 
-
     public void fillEntireForm(String firstNameValue, String lastNameValue,
                                String userEmailValue, String genderValue,
                                String userNumberValue, String dateOfBirthDaysValue,
@@ -97,47 +95,37 @@ public class PracticeFormPage {
                                String currentAddressValue, String stateElementValue, String cityValue)
     {
         pageMethods.scrollPage(0,350);
-
         elementMethods.fillElement(firstName, firstNameValue);
         elementMethods.fillElement(lastName, lastNameValue);
         elementMethods.fillElement(userEmail, userEmailValue);
         pageMethods.scrollPage(0, 350);
 
-
         switch (genderValue) {
             case "Male":
-                //genderElements.get(0).click();
                 elementMethods.clickElement(genderElements.get(0));
                 break;
             case "Female":
-                //genderElements.get(1).click();
                 elementMethods.clickElement(genderElements.get(1));
                 break;
             case "Other":
-                //genderElements.get(2).click();
                 elementMethods.clickElement(genderElements.get(2));
                 break;
         }
-
 
         elementMethods.fillElement(userNumber, userNumberValue);
         elementMethods.clickElement(dateOfBirth);
         elementMethods.selectByTextElement(dateOfBirthMonth, "September");
         elementMethods.selectByValue(year, "1990");
 
-
         for (Integer index = 0; index < dateOfBirthDays.size(); index++) {
             if (dateOfBirthDays.get(index).getText().equals(dateOfBirthDaysValue)) {
-                //dateOfBirthDays.get(index).click();
                 elementMethods.clickElement(dateOfBirthDays.get(index));
                 break;
             }
         }
 
-
         elementMethods.fillElement(subjectsInput, subjectsInputValue);
         elementMethods.pressElement(subjectsInput, Keys.ENTER);
-
 
         for (Integer index = 0; index < hobbiesElements.size(); index++) {
             String hobbyText = hobbiesElements.get(index).getText();
@@ -149,15 +137,12 @@ public class PracticeFormPage {
         File file = new File("src/test/resources/" + picturePathValue);
         uploadPictureElement.sendKeys(file.getAbsolutePath());
 
-
         elementMethods.fillElement(currentAddress, currentAddressValue);
-
         pageMethods.scrollPage(0, 350);
         elementMethods.clickElement(state);
 
         elementMethods.fillElement(stateElement, stateElementValue);
         elementMethods.pressElement(stateElement, Keys.ENTER);
-
 
         elementMethods.fillElement(city, cityValue);
         elementMethods.pressElement(city, Keys.ENTER);
@@ -170,7 +155,6 @@ public class PracticeFormPage {
                                    List<String> hobbiesValues, String picturePathValue,
                                    String currentAddressValue, String stateElementValue, String cityValue) {
         Assert.assertEquals(thankYouMessage.getText(),"Thanks for submitting the form");
-
         Assert.assertEquals(tableValues.get(0).getText(),"Student Name " + firstNameValue + " " + lastNameValue);
         Assert.assertEquals(tableValues.get(1).getText(),"Student Email " + userEmailValue);
         Assert.assertEquals(tableValues.get(2).getText(),"Gender " + genderValue);
