@@ -1,51 +1,36 @@
 package pages;
 
-import methods.ElementMethods;
-import methods.PageMethods;
-import methods.WindowMethods;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class WebTablePage {
-    public WebDriver driver;
-    public ElementMethods elementMethods;
-    public PageMethods pageMethods;
-    public WindowMethods windowMethods;
-
+public class WebTablePage extends BasePage{
     public WebTablePage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(driver);
-        windowMethods = new WindowMethods(driver);
-        pageMethods = new PageMethods(driver);
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(id = "addNewRecordButton")
-    public WebElement addRecordButton;
+    private WebElement addRecordButton;
     @FindBy(id = "firstName")
-    public WebElement firstName;
+    private WebElement firstName;
     @FindBy(id = "lastName")
-    public WebElement lastName;
+    private WebElement lastName;
     @FindBy(id = "userEmail")
-    public WebElement userEmail;
+    private WebElement userEmail;
     @FindBy(id = "age")
-    public WebElement age;
+    private WebElement age;
     @FindBy(id = "salary")
-    public WebElement salary;
+    private WebElement salary;
     @FindBy(id = "department")
-    public WebElement department;
+    private WebElement department;
     @FindBy(id = "submit")
-    public WebElement submit;
-
+    private WebElement submit;
     @FindBy(id = "edit-record-4")
-    public WebElement editRecord4;
+    private WebElement editRecord4;
     @FindBy(id = "salary")
-    public WebElement salaryEdit;
+    private WebElement salaryEdit;
     @FindBy(id = "department")
-    public WebElement editDepartment;
+    private WebElement editDepartment;
 
     public void addEntry(String firstNameValue, String lastNameValue,
                          String userEmailValue, String ageValue,

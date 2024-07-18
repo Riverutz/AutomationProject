@@ -1,92 +1,74 @@
 package pages;
 
-import methods.AlertMethods;
-import methods.ElementMethods;
-import methods.FrameMethods;
-import methods.PageMethods;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
 import java.io.File;
-import java.util.Arrays;
 import java.util.List;
 
-public class PracticeFormPage {
-    public WebDriver driver;
-    public ElementMethods elementMethods;
-    public PageMethods pageMethods;
-    public FrameMethods frameMethods;
-    public AlertMethods alertMethods;
-
+public class PracticeFormPage extends BasePage{
     public PracticeFormPage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(driver);
-        alertMethods = new AlertMethods(driver);
-        pageMethods = new PageMethods(driver);
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(id = "firstName")
-    public WebElement firstName;
+    private WebElement firstName;
 
     @FindBy(id = "lastName")
-    public WebElement lastName;
+    private WebElement lastName;
 
     @FindBy(id = "userEmail")
-    public WebElement userEmail;
+    private WebElement userEmail;
 
     @FindBy(xpath = "//div[@id='genterWrapper']/div/div/label[@class='custom-control-label']")
-    public List<WebElement> genderElements;
+    private List<WebElement> genderElements;
 
     @FindBy(id = "userNumber")
-    public WebElement userNumber;
+    private WebElement userNumber;
 
     @FindBy(id = "dateOfBirthInput")
-    public WebElement dateOfBirth;
+    private WebElement dateOfBirth;
 
     @FindBy(className = "react-datepicker__month-select")
-    public WebElement dateOfBirthMonth;
+    private WebElement dateOfBirthMonth;
 
     @FindBy(className = "react-datepicker__year-select")
-    public WebElement year;
+    private WebElement year;
 
     @FindBy(xpath = "//div[@class='react-datepicker__month']//div[not(contains(@class,'--outside-month')) and @role='option']")
-    public List<WebElement> dateOfBirthDays;
+    private List<WebElement> dateOfBirthDays;
 
     @FindBy(id = "subjectsInput")
-    public WebElement subjectsInput;
+    private WebElement subjectsInput;
 
     @FindBy(xpath = "//div[@id='hobbiesWrapper']/div/div/label[@class='custom-control-label']")
-    public List<WebElement> hobbiesElements;
+    private List<WebElement> hobbiesElements;
 
     @FindBy(id = "uploadPicture")
-    public WebElement uploadPictureElement;
+    private WebElement uploadPictureElement;
 
     @FindBy(id = "currentAddress")
-    public WebElement currentAddress;
+    private WebElement currentAddress;
 
     @FindBy(id = "state")
-    public WebElement state;
+    private WebElement state;
 
     @FindBy(id = "react-select-3-input")
-    public WebElement stateElement;
+    private WebElement stateElement;
 
     @FindBy(id = "react-select-4-input")
-    public WebElement city;
+    private WebElement city;
 
     @FindBy(xpath = "//button[@id='submit']")
-    public WebElement submit;
+    private WebElement submit;
 
     @FindBy(id = "example-modal-sizes-title-lg")
-    public WebElement thankYouMessage;
+    private WebElement thankYouMessage;
 
     @FindBy(xpath = "//table[@class='table table-dark table-striped table-bordered table-hover']/tbody/tr")
-    public List<WebElement> tableValues;
+    private List<WebElement> tableValues;
 
     public void fillEntireForm(String firstNameValue, String lastNameValue,
                                String userEmailValue, String genderValue,
@@ -165,6 +147,5 @@ public class PracticeFormPage {
         Assert.assertEquals(tableValues.get(7).getText(),"Picture " + picturePathValue );
         Assert.assertEquals(tableValues.get(8).getText(),"Address " + currentAddressValue);
         Assert.assertEquals(tableValues.get(9).getText(),"State and City " + stateElementValue + " " + cityValue);
-
     }
 }

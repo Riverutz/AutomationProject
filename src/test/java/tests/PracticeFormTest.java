@@ -1,38 +1,23 @@
 package tests;
 
-import methods.ElementMethods;
-import methods.PageMethods;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FormsPage;
 import pages.HomePage;
 import pages.PracticeFormPage;
-
-import java.io.File;
+import sharedData.SharedData;
 import java.util.Arrays;
 import java.util.List;
 
-public class PracticeFormTest {
-    public WebDriver driver;
-
+public class PracticeFormTest extends SharedData {
 
     @Test
     public void metodaTest() {
+        prepareEnvironment();
 
-
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com");
-        driver.manage().window().maximize();
-
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.navigateToFormsMenu();
 
-        FormsPage formsPage = new FormsPage(driver);
+        FormsPage formsPage = new FormsPage(getDriver());
         formsPage.navigateToPracticeForm();
 
         String firstNameValue = "Daniel Alexandru";
@@ -48,7 +33,7 @@ public class PracticeFormTest {
         String stateElementValue = "Uttar Pradesh";
         String cityValue = "Agra";
 
-        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+        PracticeFormPage practiceFormPage = new PracticeFormPage(getDriver());
         practiceFormPage.fillEntireForm(firstNameValue, lastNameValue, userEmailValue,
                 genderValue, userNumberValue, dateOfBirthDaysValue, subjectsInputValue, hobbiesValue,
                 picturePathValue, currentAddressValue, stateElementValue, cityValue);
