@@ -20,8 +20,6 @@ public class WindowTest extends SharedData {
         WindowsPage windowsPage = new WindowsPage(getDriver());
         windowsPage.interactWithNewTab();
         windowsPage.interactWithWindow();
-
-
     }
 }
 

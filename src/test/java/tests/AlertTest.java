@@ -17,7 +17,6 @@ public class AlertTest extends SharedData {
         AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(getDriver());
         alertsWindowsPage.navigateToAlertsForm();
 
-
         AlertPage alertPage = new AlertPage(getDriver());
         alertPage.interactAlertOK();
         alertPage.interactWithConfirmationButton();
