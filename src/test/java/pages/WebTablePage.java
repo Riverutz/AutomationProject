@@ -1,5 +1,6 @@
 package pages;
 
+import objectData.WebTableObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,24 +33,20 @@ public class WebTablePage extends BasePage{
     @FindBy(id = "department")
     private WebElement editDepartment;
 
-    public void addEntry(String firstNameValue, String lastNameValue,
-                         String userEmailValue, String ageValue,
-                         String salaryValue, String departmentValue) {
-
+    public void addEntry(WebTableObject testData) {
         elementMethods.clickElement(addRecordButton);
-        elementMethods.fillElement(firstName, firstNameValue);
-        elementMethods.fillElement(lastName, lastNameValue);
-        elementMethods.fillElement(userEmail, userEmailValue);
-        elementMethods.fillElement(age, ageValue);
-        elementMethods.fillElement(salary, salaryValue);
-        elementMethods.fillElement(department, departmentValue);
+        elementMethods.fillElement(firstName, testData.getFirstNameValue());
+        elementMethods.fillElement(lastName, testData.getLastNameValue());
+        elementMethods.fillElement(userEmail, testData.getUserEmailValue());
+        elementMethods.fillElement(age, testData.getAgeValue());
+        elementMethods.fillElement(salary, testData.getSalaryValue());
+        elementMethods.fillElement(department, testData.getDepartmentValue());
         elementMethods.clickElement(submit);
     }
 
-    public void editEntry(String editSalaryValue, String editDepartmentValue) {
-
+    public void editEntry(WebTableObject testData) {
         elementMethods.clickElement(editRecord4);
-        elementMethods.clearFillElement(salaryEdit, editSalaryValue);
-        elementMethods.clearFillElement(editDepartment, editDepartmentValue);
+        elementMethods.clearFillElement(salaryEdit, testData.getEditSalaryValue());
+        elementMethods.clearFillElement(editDepartment, testData.getEditDepartmentValue());
     }
 }

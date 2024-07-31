@@ -1,0 +1,14 @@
+{
+  "firstName": "Daniel Alexandru",
+  "lastName": "Vlasceanu",
+  "userEmail": "ps5@yahoo.ro",
+  "gender": "Male",
+  "userNumber": "0741223451",
+  "dateOfBirthDays": "23",
+  "subjectsInput": "Arts",
+  "hobbies": ["Sports", "Music"],
+  "picturePath": "sample.txt",
+  "currentAddress": "Str. Hohoho",
+  "stateElement": "Uttar Pradesh",
+  "city": "Agra"
+}

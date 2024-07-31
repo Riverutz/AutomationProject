@@ -16,7 +16,6 @@ public class NestedFramePage extends BasePage{
     private WebElement text;
 
     public void interactWithNestedFrame(){
-
         frameMethods.switchToFrame(childIFrame);
         System.out.println(text.getText());
     }
