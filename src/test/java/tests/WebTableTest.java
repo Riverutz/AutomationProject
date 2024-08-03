@@ -23,5 +23,6 @@ public class WebTableTest extends SharedData {
         WebTablePage webTablePage = new WebTablePage(getDriver());
         webTablePage.addEntry(testData);
         webTablePage.editEntry(testData);
+        webTablePage.deleteEntry();
     }
 }

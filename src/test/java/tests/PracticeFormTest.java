@@ -16,8 +16,6 @@ public class PracticeFormTest extends SharedData {
 
         PracticeFormObject testData = new PracticeFormObject("src/test/resources/testData/PracticeFormData.json");
 
-        //prepareEnvironment();
-
         HomePage homePage = new HomePage(getDriver());
         homePage.navigateToFormsMenu();
 

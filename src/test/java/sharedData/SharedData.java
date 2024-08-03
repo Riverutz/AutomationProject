@@ -1,7 +1,9 @@
 package sharedData;
 
+import loggerUtility.LogUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -19,9 +21,14 @@ public class SharedData {
         driver.get("https://demoqa.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        LogUtil.info("The browser was opened successfully!");
     }
     @AfterMethod
-    public void clearEnvironment(){
+    public void clearEnvironment(ITestResult result){
+        if (!result.isSuccess()){
+            LogUtil.info(result.getThrowable().getMessage());
+        }
         driver.quit();
+        LogUtil.info("The browser was closed successfully!");
     }
 }
