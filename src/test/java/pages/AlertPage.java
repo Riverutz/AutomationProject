@@ -23,26 +23,26 @@ public class AlertPage extends BasePage{
     private WebElement alertWait;
 
     public void interactAlertOK(){
-        elementMethods.clickElement(alertButtonOK);
+        elementMethods.clickJSElement(alertButtonOK);
         LogUtil.info("The user clicked on alertOK button. ");
         alertMethods.acceptAlert();
         LogUtil.info("The user interacts with the alertOK button successfully. ");
     }
     public void interactWithConfirmationButton(){
         pageMethods.scrollPage(0,350);
-        elementMethods.clickElement(alertConfirmButton);
+        elementMethods.clickJSElement(alertConfirmButton);
         LogUtil.info("The user clicked on confirmAlert button. ");
         alertMethods.acceptAlert();
         LogUtil.info("The user interacts with the confirmAlert button successfully. ");
     }
     public void interactWithPromptButton(String text){
-        elementMethods.clickElement(alertPromptButton);
+        elementMethods.clickJSElement(alertPromptButton);
         LogUtil.info("The user clicked on alertPrompt button. ");
         alertMethods.fillAlert(text);
         LogUtil.info("The user fills the text field with a value. ");
     }
     public void interactWithTimerAlert(){
-        elementMethods.clickElement(alertWait);
+        elementMethods.clickJSElement(alertWait);
         LogUtil.info("The user clicked on alertWait button. ");
         alertMethods.acceptAlert();
         LogUtil.info("The user interacts with the alertWait button successfully. ");
