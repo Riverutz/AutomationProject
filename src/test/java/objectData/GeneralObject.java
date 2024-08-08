@@ -1,18 +1,17 @@
 package objectData;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import lombok.SneakyThrows;
 import java.io.File;
 import java.io.IOException;
 
+
 public class GeneralObject {
+
+    @SneakyThrows(IOException.class)
     protected void fromJsonToObject(String filePath) {
         ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            objectMapper.readerForUpdating(this).readValue(new File(filePath));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        objectMapper.readerForUpdating(this).readValue(new File(filePath));
     }
 }
 
