@@ -157,6 +157,7 @@ public class PracticeFormPage extends BasePage{
         System.out.println(" ");
         System.out.println("VALIDATIONS");
         System.out.println(" ");
+        elementMethods.waitForElementVisible(thankYouMessage);
         Assert.assertEquals(thankYouMessage.getText(),"Thanks for submitting the form");
         LogUtil.info("The user validates the presence of " + thankYouMessage.getText());
         Assert.assertEquals(tableValues.get(0).getText(),"Student Name " + testData.getFirstName() + " " + testData.getLastName());
