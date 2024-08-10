@@ -11,10 +11,8 @@ public class FramePage extends BasePage{
     }
     @FindBy(id = "sampleHeading")
     private WebElement iframeTest;
-
     @FindBy(id = "sampleHeading")
     private WebElement iframeTestTwo;
-
     @FindBy(xpath = "//span[text()='Nested Frames']")
     private WebElement nestedFrames;
 

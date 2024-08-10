@@ -12,13 +12,10 @@ public class AlertPage extends BasePage{
 
     @FindBy(id = "alertButton")
     private WebElement alertButtonOK;
-
     @FindBy(id="confirmButton")
     private  WebElement alertConfirmButton;
-
     @FindBy(id="promtButton")
     private WebElement alertPromptButton;
-
     @FindBy(id="timerAlertButton")
     private WebElement alertWait;
 

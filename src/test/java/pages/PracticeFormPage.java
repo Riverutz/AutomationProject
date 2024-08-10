@@ -17,58 +17,40 @@ public class PracticeFormPage extends BasePage{
 
     @FindBy(id = "firstName")
     private WebElement firstName;
-
     @FindBy(id = "lastName")
     private WebElement lastName;
-
     @FindBy(id = "userEmail")
     private WebElement userEmail;
-
     @FindBy(xpath = "//div[@id='genterWrapper']/div/div/label[@class='custom-control-label']")
     private List<WebElement> genderElements;
-
     @FindBy(id = "userNumber")
     private WebElement userNumber;
-
     @FindBy(id = "dateOfBirthInput")
     private WebElement dateOfBirth;
-
     @FindBy(className = "react-datepicker__month-select")
     private WebElement dateOfBirthMonth;
-
     @FindBy(className = "react-datepicker__year-select")
     private WebElement year;
-
     @FindBy(xpath = "//div[@class='react-datepicker__month']//div[not(contains(@class,'--outside-month')) and @role='option']")
     private List<WebElement> dateOfBirthDays;
-
     @FindBy(id = "subjectsInput")
     private WebElement subjectsInput;
-
     @FindBy(xpath = "//div[@id='hobbiesWrapper']/div/div/label[@class='custom-control-label']")
     private List<WebElement> hobbiesElements;
-
     @FindBy(id = "uploadPicture")
     private WebElement uploadPictureElement;
-
     @FindBy(id = "currentAddress")
     private WebElement currentAddress;
-
     @FindBy(id = "state")
     private WebElement state;
-
     @FindBy(id = "react-select-3-input")
     private WebElement stateElement;
-
     @FindBy(id = "react-select-4-input")
     private WebElement city;
-
     @FindBy(xpath = "//button[@id='submit']")
     private WebElement submit;
-
     @FindBy(id = "example-modal-sizes-title-lg")
     private WebElement thankYouMessage;
-
     @FindBy(xpath = "//table[@class='table table-dark table-striped table-bordered table-hover']/tbody/tr")
     private List<WebElement> tableValues;
 

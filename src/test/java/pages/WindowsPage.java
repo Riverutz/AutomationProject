@@ -12,7 +12,6 @@ public class WindowsPage extends BasePage {
 
     @FindBy(id = "tabButton")
     private WebElement newTab;
-
     @FindBy(id = "windowButton")
     private WebElement newWindow;
 

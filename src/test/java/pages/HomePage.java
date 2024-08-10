@@ -12,10 +12,8 @@ public class HomePage extends BasePage{
 
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
     private WebElement alertMenu;
-
     @FindBy(xpath = "//h5[text()='Forms']")
     private WebElement formsMenu;
-
     @FindBy(xpath = "//h5[text()='Elements']")
     private WebElement elementsMenu;
 

@@ -15,8 +15,6 @@ import java.time.Duration;
 public class ElementMethods {
     public WebDriver driver;
 
-    //METODE GENERALE PENTRU INTERACTIUNEA CU ELEMENTE
-
     public void waitForElementVisible(WebElement element) {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

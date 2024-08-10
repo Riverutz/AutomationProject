@@ -12,7 +12,6 @@ public class NestedFramePage extends BasePage{
 
     @FindBy(xpath = "//iframe[@srcdoc='<p>Child Iframe</p>']")
     private WebElement childIFrame;
-
     @FindBy(xpath = "//p")
     private WebElement text;
 
