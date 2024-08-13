@@ -69,7 +69,7 @@
                     <version>3.0.0-M5</version>
                     <configuration>
                         <systemPropertyVariables>
-                            <CI_CD>true</CI_CD>
+                            <CI_CD>false</CI_CD>
                         </systemPropertyVariables>
                     </configuration>
                 </plugin>
