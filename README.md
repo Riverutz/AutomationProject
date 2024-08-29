@@ -8,7 +8,7 @@ To use this project you will need:
 3. Clone with Git Bash
 4. In Intellij click File>Open> import project to your workspace.
 
-Tests are grouped in path: /AutomationProjectAugust/src/test/java/tests
+Tests are grouped in path: /AutomationProjectVer1/src/test/java/tests
 ```
 ## About
 This project focuses on automating the demo website DEMOQA.COM. What I worked on:
