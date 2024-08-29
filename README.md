@@ -14,14 +14,14 @@ Tests are grouped in path: /AutomationProjectVer1/src/test/java/tests
 This project focuses on automating the demo website DEMOQA.COM. What I worked on:
 
 1. Elements Menu
-   -Web Tables
+   - Web Tables
 2. Forms Menu
-   -Practice Form
+   - Practice Form
 3. Alerts, Frame & Windows
-   -Browser Windows
-   -Alerts
-   -Frames
-   -Nested Frames
+   - Browser Windows
+   - Alerts
+   - Frames
+   - Nested Frames
    
 
 For this Maven Project, I have used:
